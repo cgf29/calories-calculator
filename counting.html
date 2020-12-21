@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="counting.css">
+</head>
+
+<body>
+
+   <nav class="nav">
+      <a href="#counting" class="nav__item"><img src="img/today.png"></a>
+      <a href="#allDays" class="nav__item"><img src="img/calendar.png"></a>
+      <a href="#settings" class="nav__item"><img src="img/settings.png"></a>
+      <a href="#calculator" class="nav__item"><img src="img/calculator.png"></a>
+   </nav>
+
+   <div class="page" id="counting">
+      <div class="input-blocks">
+         <div class="iput-item">
+            <div class="input-title">
+               <h2>Food</h2>
+            </div>
+            <input type="text" name="input" id="food">
+         </div>
+         <div class="iput-item">
+            <div class="input-title">
+               <h2>Calories</h2>
+            </div>
+            <input type="text" name="input" id="cal">
+         </div>
+         <div class="add-btn">
+            <button id="add-btn">Add</button>
+         </div>
+      </div>
+
+
+      <div class="table-block">
+         <h2>Saved food</h2>
+         <table id="today">
+
+         </table>
+         <div class="table-block__top">
+            <div id="limit">Max: </div>
+            <div id="eaten">Eaten: </div>
+            <div id="remaining">Reamaining: </div>
+         </div>
+      </div>
+   </div>
+
+   
+   <div id="allDays" class="page">
+      <div class="days-table">
+         <h2>All days</h2>
+         <table id="allDaysTable">
+               <th class="allDaysTh">Date:</th>
+               <th class="allDaysTh">Calories:</th>
+         </table>
+      </div>
+      <div class="avarge-result">
+         <div id="days"></div>         
+         <div id="avarge"></div>
+      </div>
+   </div>
+
+
+
+   <div id="settings" class="page">
+      <h2>Settings</h2>
+      <div class="settings-list">
+         <div class="settings__item">
+            <span>Theme</span>
+            <div class="center">
+               <input type="checkbox" id="cbx" style="display:none" onclick="dark()"/>
+               <label for="cbx" class="toggle"><span class="checkbox__span"></span></label>    
+            </div>
+         </div>
+         <div class="settings__item">
+            <span>Made by Vanya Svyatun</span>
+         </div>
+      </div>
+   </div>
+
+
+
+   <div class="page" id="calculator">
+      <div class="main">
+
+         <h1>Calories calculator</h1>
+
+         <div>
+            <input id="radio-1" class="radio-custom" name="radio" type="radio" value="male" checked>
+            <label for="radio-1" class="radio-custom-label">Male</label>
+         </div>
+         <div>
+            <input id="radio-2" class="radio-custom" name="radio" type="radio" value="female">
+            <label for="radio-2" class="radio-custom-label">Female</label>
+         </div>
+
+         <div class="fields">
+            <span>Weight</span>
+            <input type="text" id="w" class="inputs">
+         </div>
+         <div class="fields">
+            <span>Height</span>
+            <input type="text" id="h" class="inputs">
+         </div>
+         <div class="fields">
+            <span>Age</span>
+            <input type="text" id="a" class="inputs">
+         </div>
+
+         <select id="activity" onchange="selectValue();">
+            <option value="1">None</option>
+            <option value="2">1-3 traing a week</option>
+            <option value="3">3-5 training a week</option>
+            <option value="4">6-7 trainig a week</option>
+            <option value="5">Strenght training, 2 in a day</option>
+         </select>
+
+         <div>
+            <input id="goal-1" class="radio-custom" name="goal" type="radio" value="retention" checked>
+            <label for="goal-1" class="radio-custom-label">Retention</label>
+         </div>
+         <div>
+            <input id="goal-2" class="radio-custom" name="goal" type="radio" value="lose">
+            <label for="goal-2" class="radio-custom-label">Lose weight</label>
+         </div>
+         <div>
+            <input id="goal-3" class="radio-custom" name="goal" type="radio" value="build">
+            <label for="goal-3" class="radio-custom-label">Build muscle</label>
+         </div>
+
+         <div class="btns">
+            <button id="btn">Result</button>
+         </div>
+
+
+      </div>
+
+      <div class="result"></div>
+
+      <div class="chart-container" style="height:400px; width:450px">
+         <canvas id="chart"></canvas>
+         <div class="goToEat"></div>
+      </div>
+   </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+   <script src="script.js"></script>
+   <script src="counting.js"></script>
+</body>
+
+</html>
